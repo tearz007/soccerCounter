@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button> </ion-back-button>
+    </ion-buttons>
+    <ion-title>stats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-grid class="ion-padding">
+    <ion-row>
+
+      <ion-col size="6" id="div">
+
+        <ion-text class="ion-padding" ><b>{{home.name}}</b></ion-text>
+        <br>
+        <ion-text>{{"Goals: "+home.goal}}</ion-text>
+        <br>
+        <ion-text>{{"Offsides: "+home.offside}}</ion-text>
+        <br>
+        <ion-text>{{"Yellow cards: "+home.yellow}}</ion-text>
+        <br>
+        <ion-text>{{"Red cards: "+home.red}}</ion-text>
+
+      </ion-col>
+
+      <ion-col>
+
+        <ion-text class="ion-padding" ><b>{{away.name}}</b></ion-text>
+        <br>
+        <ion-text>{{"Goals: "+away.goal}}</ion-text>
+        <br>
+        <ion-text>{{"Offsides: "+away.offside}}</ion-text>
+        <br>
+        <ion-text>{{"Yellow cards: "+away.yellow}}</ion-text>
+        <br>
+        <ion-text>{{"Red cards: "+away.red}}</ion-text>
+
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

@@ -4,10 +4,35 @@
     text-align: center;
     align-items: center;
 }
+
 .teamName {
     margin-bottom: 30px;
     font-size: 30px;
 }
-#div{
+
+#div {
     border-right: 1px solid gray;
+}
+
+.alert-wrapper {
+    background: #e5e5e5;
+}
+
+.my-custom-class .alert-wrapper {
+    background: #e5e5e5;
+}
+
+.btn ion-button {
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -0%);
+}
+.btns{
+    display: block;
+    margin-top: 15%;
+}
+.btns #ion-btn{
+ width: 80px;
 }
