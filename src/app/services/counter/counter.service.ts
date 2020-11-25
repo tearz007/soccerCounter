@@ -4,20 +4,26 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CounterService {
-  homeTeam;
-  awayTeam;
+  homeTeam="";
+  awayTeam="";
   team1Goal = 0;
   team2Goal = 0;
 
-  team1Offside = 0
-  team2Offside = 0
+  team1Offside = 0;
+  team2Offside = 0;
 
-  team1Yellow = 0
-  team2yellow = 0
+  team1Yellow = 0;
+  team2yellow = 0;
 
-  team1Red = 0
-  team2Red = 0
-  constructor() { }
+  team1Red = 0;
+  team2Red = 0;
+  
+  home={name:this.homeTeam,goal:this.team1Goal,offside:this.team1Offside,yellow:this.team1Yellow,red:this.team1Red}
+  away={name:this.awayTeam,goal:this.team2Goal,offside:this.team2Offside,yellow:this.team2yellow,red:this.team2Red}
+  
+  constructor() { 
+
+  }
 
   setTeams(home, away) {
     this.homeTeam = home;
