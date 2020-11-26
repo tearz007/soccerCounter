@@ -2,14 +2,19 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
+  
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'start-page',
     pathMatch: 'full'
+  },
+  {
+    path: 'start-page',
+    loadChildren: () => import('./pages/startPage/start-page/start-page.module').then( m => m.StartPagePageModule)
+  },
+  {
+    path: 'counter',
+    loadChildren: () => import('./pages/counter/counter/counter.module').then( m => m.CounterPageModule)
   },
 ];
 
