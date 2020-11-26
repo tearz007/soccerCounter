@@ -1,0 +1,13 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "soccerCounter",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

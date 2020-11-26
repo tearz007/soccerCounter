@@ -1,0 +1,7 @@
+{
+  "name": "soccerCounter",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
