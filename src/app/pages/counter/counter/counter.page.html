@@ -20,15 +20,15 @@
         <div class="score size">
           <ion-text><b>Score</b></ion-text>
           <br>
-          <ion-text>0</ion-text>
+          <ion-text>{{goal1}}</ion-text>
         </div>
 
         <div class="btns size">
           <!-- <ion-buttons> -->
-            <ion-button (click)="setGoal('home')" >Goal</ion-button>
-            <ion-button>Offside</ion-button>
-            <ion-button>Yellow</ion-button>
-            <ion-button>Red</ion-button>
+            <ion-button (click)=" setNum('home')" >Goal</ion-button>
+            <ion-button (click)="setOffside('home')">Offside</ion-button>
+            <ion-button (click)="setYellow('home')">Yellow</ion-button>
+            <ion-button (click)="setRed('home')">Red</ion-button>
           <!-- </ion-buttons> -->
         </div>
      
@@ -38,15 +38,15 @@
         <div class="score size">
           <ion-text><b>Score</b></ion-text>
           <br>
-          <ion-text>0</ion-text>
+          <ion-text>{{goal2}}</ion-text>
         </div>
 
         <div class="btns size">
           <!-- <ion-buttons> -->
-            <ion-button>Goal</ion-button>
-            <ion-button>Offside</ion-button>
-            <ion-button>Yellow</ion-button>
-            <ion-button>Red</ion-button>
+            <ion-button  (click)=" setNum('away')">Goal</ion-button>
+            <ion-button  (click)="setOffside('away')">Offside</ion-button>
+            <ion-button (click)="setYellow('away')">Yellow</ion-button>
+            <ion-button (click)="setRed('away')">Red</ion-button>
           <!-- </ion-buttons> -->
         </div>
 
