@@ -1,3 +1,14 @@
+*{
+    color: white;
+}
+.container{
+    background-image: url('../../../../assets/default.jpg');
+    height: 91vh;
+    
+}
+.styl{
+    display: flex;
+}
 .teamName,
 .size {
     margin: auto;
@@ -29,7 +40,7 @@
     left: 50%;
     transform: translate(-50%, -0%);
 }
-.btns{
+.btns .score{
     display: block;
     margin-top: 15%;
 }

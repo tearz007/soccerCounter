@@ -1,6 +1,13 @@
+*{
+    color: white;
+}
+.container{
+    background-image: url('../../../../assets/default.jpg');
+    height: 91vh;
+}
 .input {
     // box-shadow: ;
-    border: 1px dotted black;
+    border: 1px dotted white;
     border-radius: 5px;
     margin-top: 5%;
 }

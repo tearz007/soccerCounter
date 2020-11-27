@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CounterService } from 'src/app/services/counter/counter.service';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-counter',
@@ -15,18 +16,39 @@ export class CounterPage implements OnInit {
   goal1
   goal2
 
+  match
 
 
-  constructor(private service: CounterService, public alertController: AlertController, private route: Router) {
+
+  constructor(private service: CounterService, public alertController: AlertController, private route: Router,public toastController: ToastController) {
     this.homeTeam = this.service.homeTeam;
     this.awayTeam = this.service.awayTeam;
     this.goal1 = this.service.team1Goal;
     this.goal2 = this.service.team2Goal;
+    this.match=this.service. getMatch()
   }
 
-  ngOnInit() {
-    
+
+
+  ngOnInit() {  
   }
+
+
+  test(){
+    let mat=this.service. getMatch()
+    console.log(this.service.home.goal)
+   // console.log(mat[0].goal)
+  }
+
+  async presentToast(text) {
+    const toast = await this.toastController.create({
+      message: text,
+      duration: 2000
+    });
+    toast.present();
+  }
+
+
   setAddNum(team) {
     if (team == "home") {
 
@@ -42,6 +64,7 @@ export class CounterPage implements OnInit {
     if (team == "home") {
       if (this.service.team1Goal > 0) {
         this.service.setSubNumber(team);
+        this.presentToast(this.homeTeam + " scored a goal")
         this.goal1 = this.service.team1Goal;
       }
 
@@ -49,6 +72,7 @@ export class CounterPage implements OnInit {
       if (this.service.team2Goal > 0) {
         this.service.setSubNumber(team);
         this.goal2 = this.service.team2Goal;
+        this.presentToast(this.awayTeam + " scored a goal")
       }
       
     }
@@ -59,10 +83,11 @@ export class CounterPage implements OnInit {
     this.service.setOffside(team)
     if (team == "home") {
       console.log(this.homeTeam + " is offside")
+      this.presentToast(this.homeTeam + " is offside")
      
     } else {
       console.log(this.awayTeam + " is offside")
-
+      this.presentToast(this.awayTeam + " is offside")
     }
   }
 
@@ -70,8 +95,10 @@ export class CounterPage implements OnInit {
     this.service.setyellow(team);
     if (team == "home") {
       console.log(this.homeTeam + " got a yellow card")
+      this.presentToast(this.homeTeam + " recived a yellow card")
     } else {
       console.log(this.awayTeam + " got a yellow card")
+      this.presentToast(this.awayTeam + " recived a yellow card")
     }
   }
 
@@ -79,12 +106,14 @@ export class CounterPage implements OnInit {
     this.service.setRed(team);
     if (team == "home") {
       console.log(this.homeTeam + " got a red card")
+      this.presentToast(this.homeTeam + " recived a red card")
     } else {
       console.log(this.awayTeam + " got a red card")
+      this.presentToast(this.awayTeam + " recived a red card")
     }
   }
 
-<<<<<<< Updated upstream
+
   async presentAlertConfirm() {
 
     const alert = await this.alertController.create({
@@ -149,6 +178,5 @@ export class CounterPage implements OnInit {
 
 
 
-=======
->>>>>>> Stashed changes
+
 }

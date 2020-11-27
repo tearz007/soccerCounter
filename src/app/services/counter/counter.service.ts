@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class CounterService {
   homeTeam="";
   awayTeam="";
+ 
   team1Goal = 0;
   team2Goal = 0;
 
@@ -20,6 +21,8 @@ export class CounterService {
   
   home={name:this.homeTeam,goal:this.team1Goal,offside:this.team1Offside,yellow:this.team1Yellow,red:this.team1Red}
   away={name:this.awayTeam,goal:this.team2Goal,offside:this.team2Offside,yellow:this.team2yellow,red:this.team2Red}
+
+  match=[this.home,this.away]
   
   constructor() { 
 
@@ -67,6 +70,10 @@ export class CounterService {
     } else {
       this.team2Red = this.team2Red + 1;
     }
+  }
+
+  getMatch(){
+    return this.match
   }
 
   reset() {

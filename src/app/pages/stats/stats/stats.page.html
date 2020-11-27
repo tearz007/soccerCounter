@@ -1,47 +1,62 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button> </ion-back-button>
     </ion-buttons>
-    <ion-title>stats</ion-title>
+    <ion-title>Statistics</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="container">
+    <ion-grid class="ion-padding">
+      <ion-row>
+
+        <ion-col size="6" id="div">
+          <div class="ion">
+            <ion-text class="ion"><b style="font-size: 20px;">{{home.name}}</b></ion-text>
+          </div>
+          <div class="ion">
+            <ion-text class="ion">{{"Goals: "+home.goal}}</ion-text>
+          </div>
+          <div class="ion">
+            <ion-text class="ion">{{"Offsides: "+home.offside}}</ion-text>
+          </div>
+          <div class="ion">
+            <ion-text class="ion">{{"Yellow cards: "+home.yellow}}</ion-text>
+          </div>
+          <div class="ion">
+            <ion-text class="ion">{{"Red cards: "+home.red}}</ion-text>
+          </div>
+
+        </ion-col>
+
+        <ion-col>
+
+            <div class="ion">
+              <ion-text class="ion"><b style="font-size: 20px;">{{away.name}}</b></ion-text>
+            </div>
+            <div class="ion">
+              <ion-text class="ion">{{"Goals: "+away.goal}}</ion-text>
+            </div>
+            <div class="ion">
+              <ion-text class="ion">{{"Offsides: "+away.offside}}</ion-text>
+            </div>
+            <div class="ion">
+              <ion-text class="ion">{{"Yellow cards: "+away.yellow}}</ion-text>
+            </div>
+            <div class="ion">
+              <ion-text class="ion">{{"Red cards: "+away.red}}</ion-text>
+            </div>
   
-  <ion-grid class="ion-padding">
-    <ion-row>
 
-      <ion-col size="6" id="div">
+        
 
-        <ion-text class="ion-padding" ><b>{{home.name}}</b></ion-text>
-        <br>
-        <ion-text>{{"Goals: "+home.goal}}</ion-text>
-        <br>
-        <ion-text>{{"Offsides: "+home.offside}}</ion-text>
-        <br>
-        <ion-text>{{"Yellow cards: "+home.yellow}}</ion-text>
-        <br>
-        <ion-text>{{"Red cards: "+home.red}}</ion-text>
+        </ion-col>
 
-      </ion-col>
+      </ion-row>
 
-      <ion-col>
-
-        <ion-text class="ion-padding" ><b>{{away.name}}</b></ion-text>
-        <br>
-        <ion-text>{{"Goals: "+away.goal}}</ion-text>
-        <br>
-        <ion-text>{{"Offsides: "+away.offside}}</ion-text>
-        <br>
-        <ion-text>{{"Yellow cards: "+away.yellow}}</ion-text>
-        <br>
-        <ion-text>{{"Red cards: "+away.red}}</ion-text>
-
-      </ion-col>
-
-    </ion-row>
-
-  </ion-grid>
+    </ion-grid>
+  </div>
 
 </ion-content>

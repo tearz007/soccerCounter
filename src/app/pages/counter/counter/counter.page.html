@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button> </ion-back-button>
     </ion-buttons>
@@ -14,77 +14,82 @@
 </ion-header>
 
 <ion-content>
+  <div class="container">
+    <ion-grid class="ion-padding">
+      <ion-row>
+        <ion-col size="6" id="div">
+          <div class="teamName">
+            <ion-text><b>{{homeTeam}}</b></ion-text>
+          </div>
+          <div class="score size">
+            <ion-text><b>Score</b></ion-text>
+            <br>
+            <ion-text>{{goal1}}</ion-text>
+          </div>
 
-  <ion-grid class="ion-padding">
-    <ion-row>
-      <ion-col size="6" id="div">
-        <div class="teamName">
-          <ion-text><b>{{homeTeam}}</b></ion-text>
-        </div>
-        <div class="score size">
-          <ion-text><b>Score</b></ion-text>
-          <br>
-          <ion-text>{{goal1}}</ion-text>
-        </div>
+          <div class="btns size">
+            <ion-label>Goals</ion-label>
+            <ion-buttons class="ion-padding">
+              <ion-button (click)="setAddNum('home')">
+                <ion-icon color=primary size="large" name="add-circle-outline"></ion-icon>
+              </ion-button>
+              <ion-button (click)="setSubNum('home')">
+                <ion-icon color=primary size="large" name="remove-circle-outline">
+                </ion-icon>
+              </ion-button>
+            </ion-buttons>
+            <!-- <ion-button (click)=" setNum('home')">Goal</ion-button> -->
+            <ion-button id="ion-btn" (click)="setOffside('home')">Offside</ion-button>
+            <ion-button id="ion-btn" (click)="setYellow('home')">Yellow</ion-button>
+            <ion-button id="ion-btn" (click)="setRed('home')">Red</ion-button>
 
-        <div class="btns size">
-          <ion-label>Goals</ion-label>
-          <ion-buttons class="ion-padding">
-            <ion-button (click)="setAddNum('home')">
-              <ion-icon size="large" name="add-circle-outline"></ion-icon>
-            </ion-button>
-            <ion-button (click)="setSubNum('home')">
-              <ion-icon size="large" name="remove-circle-outline">
-              </ion-icon>
-            </ion-button>
-          </ion-buttons>
-          <!-- <ion-button (click)=" setNum('home')">Goal</ion-button> -->
-          <ion-button id="ion-btn" (click)="setOffside('home')">Offside</ion-button>
-          <ion-button id="ion-btn" (click)="setYellow('home')">Yellow</ion-button>
-          <ion-button id="ion-btn" (click)="setRed('home')">Red</ion-button>
+          </div>
 
-        </div>
-
-      </ion-col>
-      <ion-col>
-        <div class="teamName">
-          <ion-text><b>{{awayTeam}}</b></ion-text>
-        </div>
-        <div class="score size">
-          <ion-text><b>Score</b></ion-text>
-          <br>
-          <ion-text>{{goal2}}</ion-text>
-        </div>
+        </ion-col>
+        <ion-col>
+          <div class="teamName">
+            <ion-text><b>{{awayTeam}}</b></ion-text>
+          </div>
+          <div class="score size">
+            <ion-text><b>Score</b></ion-text>
+            <br>
+            <ion-text>{{goal2}}</ion-text>
+          </div>
 
 
 
-        <div class="btns size">
-          <ion-label>Goals</ion-label>
-          <ion-buttons class="ion-padding">
-            <ion-button (click)="setAddNum('away')">
-              <ion-icon size="large" name="add-circle-outline">
-              </ion-icon>
-            </ion-button>
-            <ion-button (click)="setSubNum('away')">
-              <ion-icon size="large" name="remove-circle-outline"></ion-icon>
-            </ion-button>
-          </ion-buttons>
+          <div class="btns size">
+            <ion-label>Goals</ion-label>
+            <ion-buttons class="ion-padding">
+              <ion-button (click)="setAddNum('away')">
+                <ion-icon color=primary size="large" name="add-circle-outline">
+                </ion-icon>
+              </ion-button>
+              <ion-button (click)="setSubNum('away')">
+                <ion-icon color=primary size="large" name="remove-circle-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
 
-          <ion-button id="ion-btn" (click)="setOffside('away')">Offside</ion-button>
-          <ion-button id="ion-btn" (click)="setYellow('away')">Yellow</ion-button>
-          <ion-button id="ion-btn" (click)="setRed('away')">Red</ion-button>
+            <ion-button id="ion-btn" (click)="setOffside('away')">Offside</ion-button>
+            <ion-button id="ion-btn" (click)="setYellow('away')">Yellow</ion-button>
+            <ion-button id="ion-btn" (click)="setRed('away')">Red</ion-button>
 
-        </div>
+          </div>
 
-      </ion-col>
-    </ion-row>
+        </ion-col>
+      </ion-row>
 
-  </ion-grid>
+    </ion-grid>
 
-  <div class="btn">
-    <ion-button (click)="presentAlertConfirm()">
-      Reset
-    </ion-button>
+    <div class="btn">
+      <ion-button (click)="presentAlertConfirm()">
+        Reset
+      </ion-button>
+    </div>
+    <div class="btn">
+      <ion-button (click)="test()">
+        Reset2
+      </ion-button>
+    </div>
   </div>
-
 </ion-content>
