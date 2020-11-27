@@ -40,7 +40,7 @@ export class CounterPage implements OnInit {
    // console.log(mat[0].goal)
   }
 
-  async presentToast(text) {
+  async presentToast(text) {   
     const toast = await this.toastController.create({
       message: text,
       duration: 2000
@@ -54,9 +54,11 @@ export class CounterPage implements OnInit {
 
       this.service.setNumber(team);
       this.goal1 = this.service.team1Goal;
+      this.presentToast(this.homeTeam + " scored a goal")
     } else {
       this.service.setNumber(team);
       this.goal2 = this.service.team2Goal;
+      this.presentToast(this.awayTeam + " scored a goal")
     }
   }
 
@@ -64,7 +66,6 @@ export class CounterPage implements OnInit {
     if (team == "home") {
       if (this.service.team1Goal > 0) {
         this.service.setSubNumber(team);
-        this.presentToast(this.homeTeam + " scored a goal")
         this.goal1 = this.service.team1Goal;
       }
 
@@ -72,7 +73,6 @@ export class CounterPage implements OnInit {
       if (this.service.team2Goal > 0) {
         this.service.setSubNumber(team);
         this.goal2 = this.service.team2Goal;
-        this.presentToast(this.awayTeam + " scored a goal")
       }
       
     }
