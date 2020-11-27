@@ -84,6 +84,7 @@ export class CounterPage implements OnInit {
     }
   }
 
+<<<<<<< Updated upstream
   async presentAlertConfirm() {
 
     const alert = await this.alertController.create({
@@ -148,4 +149,6 @@ export class CounterPage implements OnInit {
 
 
 
+=======
+>>>>>>> Stashed changes
 }
