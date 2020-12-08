@@ -15,10 +15,12 @@ const routes: Routes = [
   {
     path: 'counter',
     loadChildren: () => import('./pages/counter/counter/counter.module').then( m => m.CounterPageModule)
-  },  {
+  },
+  {
     path: 'stats',
     loadChildren: () => import('./pages/stats/stats/stats.module').then( m => m.StatsPageModule)
   },
+  
 
 ];
 
